@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>主題偵測與跳轉</title>
+  </head>
+  <body>
+    <script>
+      // 設定亮色和暗色模式各自的目標連結
+      const lightModeURL = 'https://drive.google.com/file/d/1TRqiKIKYNI-gRz9kQLHDIWwBQGbmjXcc/view?usp=drive_link'
+      const darkModeURL = 'https://drive.google.com/file/d/13YU2FjQ0zVV1AJGrsbwVTy37glUnSKbk/view?usp=sharing'
+
+      // 檢查 prefers-color-scheme
+      const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+
+      // 根據結果進行跳轉
+      if (isDarkMode) {
+        window.location.href = darkModeURL
+      } else {
+        window.location.href = lightModeURL
+      }
+    </script>
+    <p>跳轉中請稍等...</p>
+  </body>
+</html>
